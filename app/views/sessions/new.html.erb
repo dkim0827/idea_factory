@@ -1,0 +1,21 @@
+<br>
+<div class="sign-in-form container">
+    <div class="sign-in-brand">
+        <a href="<%= root_path %>" class="logo">Idea Factory</a>
+    </div><br>
+    <%= form_with url: session_path, local: true do |f| %>
+    <div class="sign-in-content">
+        <h3><strong>Sign-In</strong></h3>
+        <p><%= flash[:alert] %></p>
+        <strong><%= f.label :email, "E-mail address"%></strong><br>
+        <%= f.email_field :email, style:"width:100%;"%><br><br>
+        <strong><%= f.label :password %></strong><br>
+        <%= f.password_field :password, style:"width:100%;"%>
+        <div><br>
+            <%= f.submit "Sign-In", style:"width:100%;", class:"sign-in-button"%><br><br>
+            <h5><span>New to Idea Factory?</span></h5>
+            <a button type="button" class="sign-up-button" href="<%= new_user_path %>">Create Your
+                Account</a></button>
+            <% end %>
+        </div>
+    </div>
