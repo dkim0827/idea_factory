@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
 
     # If User is not signed in it will send to sign_in page
     def authenticate_user!
-        redirect_to new_session_path, notice: "Please sign in" unless user_signed_in?
+        redirect_to new_session_path, notice: "Please Sign in" unless user_signed_in?
     end
     
     # Check is user signed in or not

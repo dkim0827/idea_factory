@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One|Anton|Lato|Rubik&display=swap');
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+.show-post {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    color: #131A22;
+
+}
+
+.post-image {
+    display: flex;
+}
+
+input {
+    border: 1px solid #b7b7b7;
+}
+
+textarea {
+    border: 1px solid #b7b7b7;
+}
+
+.post-card {
+    border: solid;
+    border-color: #131A22;
+    ;
+    border-width: 2px !important;
+    border-radius: 0.5rem;
+    padding: 1em;
+    min-height: 12rem;
+}
+
+.post-card-footer {
+    position: absolute;
+    bottom: 1rem;
+    width: 100%;
+    color: #131A22;
+}
+
+.navbar-default {
+    background-color: #232F3E;
+    border-top: 3px #ff9900 solid;
+}
+
+.navbar .navbar-nav li>a {
+    color: white !important;
+}
+
+.navbar .navbar-brand {
+    color: white !important;
+}
+
+.board {
+    border-color: #131A22;
+    ;
+}
+
+.comment-list {
+    list-style-type: none;
+}
+
+.new-post {
+    border: solid;
+    border-color: #131A22;
+    width: 50%;
+    background-size: 40rem 20rem;
+
+}
+
+.new-form-h1 {
+    color: #131A22;
+}
+
+.sign-in-content {
+    border: 0.3em solid #b7b7b7;
+    max-width: 40%;
+    min-width: 40%;
+    border-radius: 0.3em;
+    min-height: 13em;
+    padding: 1em;
+    margin: auto;
+}
+
+.sign-in-form {
+    width: 100%;
+}
+
+.sign-in-brand {
+    text-align: center;
+    font-size: 2em;
+
+}
+
+.logo {
+    text-decoration: underline;
+    text-decoration-color: #ff9900;
+    color: #131A22;
+}
+
+.sign-in-button {
+    background-image: linear-gradient(#FFFFCC, #FF9900);
+    height: 2em;
+    border-radius: 0.3em;
+}
+
+h5 {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #000;
+    line-height: 0.1em;
+    margin: 10px 0 20px;
+    font-size: 0.8em;
+    color: #131A22;
+    ;
+}
+
+
+h5 span {
+    background: #fff;
+    padding: 0 10px;
+}
+
+.sign-up-button {
+    background-image: linear-gradient(#f0f0f0, #d3d3d3);
+    border: #131A22;
+    height: 2em;
+    border-radius: 0.3em;
+    width: 100%;
+    color: #131A22;
+    text-align: center;
+    padding-top: 3px;
+}
+
+.terms-of-use {
+    font-size: 0.8em;
+}
+
+.post-header {
+    padding-left: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+.edit-button {
+    background-image: linear-gradient(#FFFFCC, #FF9900);
+    padding: 0.2em 3em;
+    border-radius: 0.2em;
+    margin-right: 0.5em;
+    color: black;
+    border-color: black;
+    border: solid;
+    border-width: 0.5px;
+
+    @media (max-width: 900px) {
+        margin: 0;
+    }
+}
+
+.delete-button {
+    background-image: linear-gradient(#FFFFCC, #FF9900);
+    padding: 0.2em 3em;
+    border-radius: 0.2em;
+    color: black;
+    border-color: black;
+    border: solid;
+    border-width: 0.5px;
+}
+
+.post-flex {
+    display: flex;
+    flex-direction: column;
+}
+
+.post-buttons {
+    display: flex;
+    flex-direction: row;
+    margin-top: 3px;
+    margin-bottom: 5px;
+
+    @media (max-width: 900px) {
+        flex-direction: column;
+        width: 300px;
+    }
+}
+
+.post-body {
+    border-top: 1px solid black;
+    padding-top: 1em;
+}
+
+.fullwidth {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(image_path('hero.jpg'));
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding-top: 10em;
+}
+
+.show-post-container {
+    margin: 3px 10px;
+}
+
+.path {
+    font-size: 1em;
+    color: grey;
+    margin-left: 2em;
+}
+
+.post-header {
+    margin-bottom: 0em !important;
+}
+
+.post-hr {
+    border-color: black;
+}
+
+.comment-button {
+    background-image: linear-gradient(#f0f0f0, #d3d3d3);
+    border-color: #131A22;
+    height: 2em;
+    border-radius: 0.3em;
+    width: 20%;
+    color: #131A22;
+    text-align: center;
+    padding-top: 3px;
+}
+
+.comment-header {
+    color: #B45C31;
+    size: 0.1em;
+    font-family: 'Rubik', sans-serif;
+}
+
+.comment-head {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+small {
+    color: grey;
+}
+
+.delete-acc-button {
+    background-image: linear-gradient(#FFFFCC, #FF9900);
+    border: #131A22;
+    height: 2em;
+    border-radius: 0.3em;
+    width: 100%;
+    color: #131A22;
+    text-align: center;
+    padding-top: 3px;
+}
+
+.welcome__h1 {
+    font-size: 5em;
+    color: white;
+}
+
+.welcome__button {
+    color: white;
+    border: 5px solid white;
+    padding: 0 0.5em;
+    font-size: 3em;
+    border-radius: 0.5em;
+}
+
+.welcome__p {
+    color: white;
+}
+
+.liked__h1 {
+    text-align: center;
+}
+
+.fullwidth2 {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    background-image: url(image_path('hero.jpg'));
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}

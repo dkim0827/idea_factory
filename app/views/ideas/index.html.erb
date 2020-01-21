@@ -1,0 +1,16 @@
+<%= render 'navigation'%>
+<br>
+<div class="container">
+    <div class="row">
+        <% @ideas.each do |idea| %>
+        <div class="col-lg-4 py-2">
+            <div class="post-card">
+                <h2><%=link_to( idea.title.truncate(30, separator: " "), idea_path(idea.id)) %></h2>
+                <div><%= idea.description.truncate(50, separator: " ") %></div>
+                <div class="post-card-footer"><small>likes: <%= idea.likes.count %> | reviews : <%= idea.reviews.count %> | Posted <%= remove_unwanted_words time_ago_in_words(idea.created_at) %> ago </small></div>
+            </div>
+        </div>
+        <% end %>
+    </div>
+</div>
+</div>

@@ -1,14 +1,15 @@
-<nav>
 <% if user_signed_in? %>
-  Hello <%= current_user.full_name %>,
-  <%= link_to "Logout", session_path, method: :delete,
-            data: {confirm: "are you sure you want to log out?"}%>
-<% else %>
-  <%= link_to "Sign In", new_session_path %>
-<% end %>
-</nav>
-<p>
-<%= flash[:notice] || flash[:alert] || flash[:success]%>
-</p>
+<div class="fullwidth2">
+    <%= render 'navigation' %>
+    <h1 class="welcome__h1"><strong>IDEA FACTORY</strong></h1>
+    <p class="welcome__p"><strong>"No Matter What People Tell You, Words And Ideas Can Change The World." – Robin
+            Williams</strong></p>
+    <% else %>
+    <div class="fullwidth">
+        <h1 class="welcome__h1"><strong>IDEA FACTORY</strong></h1>
+        <p class="welcome__p"><strong>"No Matter What People Tell You, Words And Ideas Can Change The World." – Robin
+                Williams</strong></p>
+        <a button type="button" class="welcome__button" href="<%= new_session_path %>">Start</a></button>
+    </div>
 
-<h1>Welcome To Home Page</h1>
+    <% end %>

@@ -1,0 +1,85 @@
+<%= render 'navigation' %>
+
+<div class="show-post-container">
+  <br>
+  <small class="path">Home > Ideas > <%= @idea.title %></small>
+  <div class="show-post p-3">
+    <%= image_tag "bmo.jpg", alt: "bmo image", class:"post-image", style:"width:40%; height:auto;"%>
+    <div class="post-header">
+      <div class"post-flex">
+        <h1 class="post-header1"><%= @idea.title %>
+          <% if @like.present? && can?(:destroy, @like) %>
+          <%=link_to(
+                "[Unlike]",
+                like_path(@like),
+                method: :delete
+            )%>
+          <% elsif can?(:like, @idea) %>
+          <%=link_to(
+                "[Like]",
+                idea_likes_path(@idea),
+                method: :post
+            )%>
+          <% end %>
+        </h1>
+
+        <small style="color:black;">by <strong
+            style="color:#0000EE;"><%= @idea.user&.full_name || 'DELETED' %></strong></small><br>
+        <small style="color:black;">Posted on
+          <strong style="color:#0000EE;"><%= @idea.created_at.strftime("%b %d, %Y") %> |
+            <%= pluralize(@idea.reviews.count, "review") %> | <%= pluralize(@idea.likes.count, "like") %>
+          </strong></small>
+        <% if can? :crud, @idea %>
+        <div class="post-buttons">
+          <%= link_to 'Edit Idea', edit_idea_path(@idea.id), class: "edit-button"%>
+          <%= link_to("Delete Idea", idea_path(@idea), method: :delete, data:{confirm:'Are you sure?'}, class: "delete-button") %>
+        </div>
+        <% end %>
+      </div>
+      <p class="post-body"><%= @idea.description %></p>
+    </div>
+  </div>
+  <hr class="post-hr">
+  <section>
+    <%= form_with(model: [@idea, @new_review], local: true) do |f| %>
+    <h4 class="comment-header"><strong>Review this Idea</strong></h4>
+    <% if @new_review.errors.present? %>
+    <p class="form-errors">
+      <%= @new_review.errors.full_messages.join(", ") %>
+    </p>
+    <% end %>
+    <div class="form-group">
+      <%= f.text_area(
+            :body,
+            cols: 50,
+            rows: 3,
+            placeholder:"What are your thoughts?",
+            class: "form-control"
+        ) %>
+    </div>
+
+    <%= f.submit 'Write a user review', class: "comment-button"%>
+    <% end %>
+
+    <hr class="board">
+    <div class="comment">
+      <% @reviews.each do |review| %>
+      <div class="comment-head">
+        <%= image_tag "unknown", alt: "user picture", class:"unknown-image", style:"width:3%; height:auto;"%>
+        <div class="image-user">
+          <strong>&nbsp;&nbsp;<%= review.user&.full_name || 'DELETED' %> </strong>
+        </div>
+      </div>
+      <small>Reviewed in <%= review.created_at.strftime("%b %d, %Y") %></small>
+      <div class="comment-body">
+        <%= review.body %> <br>
+      </div>
+      <small>
+        <% if can? :crud, review %>
+        <%= link_to 'Delete', idea_review_path(@idea, review), method: :delete, data: { confirm: 'Are you sure that you want to delete this review?' } %>
+        <% end %>
+      </small>
+      <% end %>
+    </div>
+  </section>
+  <br>

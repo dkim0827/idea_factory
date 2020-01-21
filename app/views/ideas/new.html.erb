@@ -1,0 +1,27 @@
+<%= render 'navigation'%>
+<br>
+<div class="sign-in-form container">
+  <div class="sign-in-brand"><a href="<%= root_path %>" class="logo">Idea Factory</a></div><br>
+  <%= form_with model: @idea, local: true do |f|%>
+    <div class="sign-in-content">
+    <h3><strong>Create Idea</strong></h3>
+    <% if @idea.errors.present?%>
+    <p style="color:red;">
+      <%= @idea.errors.full_messages.join(', ') %>
+    </p>
+    <% end %>
+    <strong><%= f.label :title, "Title"%></strong>
+    <%= f.text_field :title, style:"width:100%;"%><br>
+    <strong><%= f.label :description, "Description", cols:50, rows:3%></strong>
+    <%= f.text_area :description, style:"width:100%;"%><br>
+    <div>
+      <%= f.submit "Create Your Idea", style:"width:100%;", class:"sign-in-button"%><br>
+      <p class="terms-of-use"><br>
+        By creating a Idea, you agree to Idea Factory's<br>
+        <strong style="color:#0000EE;">Conditions of Use</strong> and <strong style="color:#0000EE;">Privacy
+        Notice</strong>.</p>
+        
+      <% end %>
+    </div>
+  </div>
+</div>

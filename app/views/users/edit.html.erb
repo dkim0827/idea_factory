@@ -1,0 +1,35 @@
+<br>
+<div class="sign-in-form container">
+    <div class="sign-in-brand">
+        <a href="<%= root_path %>" class="logo">Idea Factory</a>
+    </div><br>
+    <%= form_with model: @user, local: true do |f|%>
+    <div class="sign-in-content">
+        <h3><strong>My Profile</strong></h3>
+        <% if @user.errors.any?%>
+        <p style="color:red;">
+            <%= @user.errors.full_messages.join(', ') %>
+        </p>
+        <% end %>
+        <p><%= flash[:notice] || flash[:alert] || flash[:success]%></p>
+        <strong><%= f.label :first_name, "First name"%></strong>
+        <%= f.text_field :first_name, style:"width:100%;"%>
+        <strong><%= f.label :last_name, "Last name"%></strong>
+        <%= f.text_field :last_name, style:"width:100%;"%>
+        <strong><%= f.label :email, "Email"%></strong>
+        <%= f.email_field :email, style:"width:100%;"%>
+        <div><br>
+            <%= f.submit "Update Your Profile", style:"width:100%;", class:"sign-in-button"%><br>
+            <a button type="button" class="delete-acc-button" href="<%= password_path(@user)%>"
+            style="margin-top:1em;">Change
+            Password</a></button>
+            <p class="terms-of-use"><br>
+                By deleing an account, you will be no longer to access<br>
+                <strong style="color:#0000EE;">Conditions of Use</strong> and <strong style="color:#0000EE;">Privacy
+                    Notice</strong>.
+            </p>
+            <%= link_to "Delete Account", user_path(current_user), method: :delete, data: {confirm: "Are you sure you want to Delete Account?"}, class:"sign-up-button", type:"button"%>
+            <% end %>
+        </div>
+    </div>
+</div>
