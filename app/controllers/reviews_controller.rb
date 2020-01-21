@@ -10,7 +10,7 @@ class ReviewsController < ApplicationController
             redirect_to idea_path(@idea)
         else
             @reviews = @idea.reviews.order(created_at: :desc)
-            render 'idea/show'
+            render 'ideas/show.html.erb'
         end
     end
 
