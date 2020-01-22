@@ -1,24 +1,22 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Project Title : Idea Factory
 
-Things you may want to cover:
+Description :
+Built to learn ruby on rails API concept
 
-* Ruby version
+What is included?
+- User Autentication
+- User Authorization
+- basic :CRUD action
+- custom PATH without using resources
+- one-to-many, many-to-many Relationship
+- validation
+- testing
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+How to use?
+1. git clone 'repo url' in command line
+2. bundle
+3. rails db:drop db:create db:migrate
+4. rails s
+5. visit localhost:3000
